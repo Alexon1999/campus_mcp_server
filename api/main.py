@@ -14,6 +14,6 @@ app.include_router(schedules.router, prefix="/api")
 # MCP Server
 app.include_router(mcp_router, prefix="/mcp")
 
-@app.get("/")
-def root():
+@app.get("/api/health")
+def api_health():
     return {"status": "ok"}
