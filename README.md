@@ -53,6 +53,7 @@ docker-compose logs api -f
 ## Améliorations
 
 - Inclure ce MCP server dans un LLM
+- Améliorer la gestion d'erreur et réponse d'erreur
 - Ajouter un logger
 - Ajouter un swagger/open api pour notre api rest
 - Ajouter un système de migration avec Alembic
