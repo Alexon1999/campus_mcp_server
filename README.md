@@ -43,7 +43,7 @@ Quelques outils disponibles :
 - `get_schedule` : récupérer l'emploi du temps.
 - `add_entry` : ajouter un créneau/événement dans l'emploi du temps.
 
-> 💡 Pour plus de détails sur le protocole MCP et comment il fonctionne, voir [docs/mcp_server.md](./docs/mcp_server.md).
+> Pour plus de détails sur le protocole MCP et comment il fonctionne, voir [docs/mcp_server.md](./docs/mcp_server.md).
 
 ## Commandes pour lancer le serveur
 docker-compose up -d
