@@ -20,7 +20,7 @@
     },
     "5050": {
       "label": "Adminer",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "openPreview"
     }
   },
   "customizations": {
