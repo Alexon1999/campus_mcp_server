@@ -6,8 +6,10 @@ Pour cela on va utiliser MCP server. clique-ici pour en savoir plus sur le conce
 
 ## Implémentation
 
-1) Une **API REST FastAPI** qui expose des endpoints pour gérer les classes et leurs emplois du temps (identifiées par un numéro de classe).
+1) Une **API REST** qui expose des endpoints pour gérer les classes et leurs emplois du temps (identifiées par un numéro de classe).
 2) Un **serveur MCP (Model Context Protocol)** qui fournit des outils (tools) utilisables par un LLM. Le LLM interagit avec le serveur MCP, qui appelle ensuite notre API REST pour effectuer les actions demandées.
+
+> FastAPI peut gèrer à la fois API REST et MCP server. le service api contient l'api rest et mcp server.
 
 ## Architecture
 
@@ -45,17 +47,27 @@ Quelques outils disponibles :
 
 > Pour plus de détails sur le protocole MCP et comment il fonctionne, voir [docs/mcp_server.md](./docs/mcp_server.md).
 
-## Commandes pour lancer le serveur
-docker-compose up -d
+## Commandes importantes
 
+- Lancer les conteneurs docker
+```
+docker-compose up -d
+```
+
+- Consulter les logs api
+```
 docker-compose logs api -f
+```
 
 ## Améliorations
 
 - Inclure ce MCP server dans un LLM
 - Améliorer la gestion d'erreur et réponse d'erreur
+- Déploiement d'api sur le cloud
+- Ajouter une sécurité JWT / API Key
+- Ajouter pipelines CI/CD GitHub Actions
+- Ajouter un reverse proxy NGINX
 - Ajouter un logger
 - Ajouter un swagger/open api pour notre api rest
 - Ajouter un système de migration avec Alembic
-- Ajouter une sécurité JWT / API Key
 - Création de front React/Vite pour visualiser les emplois du temps
