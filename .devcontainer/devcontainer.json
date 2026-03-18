@@ -4,21 +4,29 @@
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  "updateContentCommand": "pip install -r requirements.txt",
-  "postCreateCommand": "",
+  // "updateContentCommand": "pip install -r requirements.txt",
+  "postCreateCommand": "docker-compose up -d",
   "postAttachCommand": {
-    "server": "flask --debug run"
+    "logs_api": "docker-compose logs api -f"
   },
   "portsAttributes": {
-    "5000": {
-      "label": "Application",
+    "8000": {
+      "label": "API",
       "onAutoForward": "openPreview"
+    },
+    "5432": {
+      "label": "Database",
+      "onAutoForward": "openPreview"
+    },
+    "5050": {
+      "label": "Adminer",
+      "onAutoForward": "openBrowser"
     }
   },
   "customizations": {
     "codespaces": {
       "openFiles": [
-        "templates/index.html"
+        "README.md"
       ]
     },
     "vscode": {
@@ -27,5 +35,5 @@
       ]
     }
   },
-  "forwardPorts": [5000]
+  "forwardPorts": [8000, 5432, 5050]
 }
